@@ -164,6 +164,7 @@ function App() {
       setLoadingFirebase(false);
     }
   };
+  //holamundp
 
   // Consumir preguntas diversas generadas por Gemini
   const obtenerPreguntasDiversasGemini = async () => {
