@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { db } from '../firebase';
 import { doc, getDoc, collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
-
+//jjkgjhvchfgxchvjklñkjvhc
 const Chatbot = ({ user }) => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
