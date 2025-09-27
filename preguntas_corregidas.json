@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Determine la letra que continúa la serie: a, b, a, c, b, d, b, ____",
+    "options": ["A. f", "B. g", "C. a", "D. e"],
+    "answer": "D",
+    "explanation": "La serie tiene dos patrones intercalados: posiciones impares (a,a,b,b...) y posiciones pares (b,c,d,e...)"
+  },
+  {
+    "question": "¿Cuál es el sinónimo de 'perspicaz'?",
+    "options": ["A. Torpe", "B. Astuto", "C. Lento", "D. Confuso"],
+    "answer": "B",
+    "explanation": "Perspicaz significa que tiene agudeza mental, por lo tanto es sinónimo de astuto"
+  },
+  {
+    "question": "Si 3 obreros construyen una pared en 6 días, ¿cuántos días tardarán 9 obreros en construir la misma pared?",
+    "options": ["A. 18 días", "B. 9 días", "C. 2 días", "D. 3 días"],
+    "answer": "C",
+    "explanation": "Es una proporción inversa: 3 obreros × 6 días = 18 días-obrero. 18 ÷ 9 obreros = 2 días"
+  },
+  {
+    "question": "Complete la analogía: Libro es a biblioteca como cuadro es a ____",
+    "options": ["A. Marco", "B. Pincel", "C. Museo", "D. Arte"],
+    "answer": "C",
+    "explanation": "Un libro se guarda en una biblioteca, así como un cuadro se exhibe en un museo"
+  },
+  {
+    "question": "¿Qué número continúa la serie: 2, 6, 12, 20, 30, ____?",
+    "options": ["A. 40", "B. 42", "C. 38", "D. 36"],
+    "answer": "B",
+    "explanation": "La diferencia entre números consecutivos aumenta de 2 en 2: +4, +6, +8, +10, +12"
+  },
+  {
+    "question": "Si María tiene 3 años más que Juan y la suma de sus edades es 27, ¿cuántos años tiene Juan?",
+    "options": ["A. 12 años", "B. 15 años", "C. 10 años", "D. 14 años"],
+    "answer": "A",
+    "explanation": "Juan = x, María = x+3. Ecuación: x + (x+3) = 27, entonces 2x = 24, x = 12"
+  },
+  {
+    "question": "¿Cuál de las siguientes palabras NO pertenece al grupo?",
+    "options": ["A. Violín", "B. Piano", "C. Guitarra", "D. Pincel"],
+    "answer": "D",
+    "explanation": "Violín, piano y guitarra son instrumentos musicales, mientras que pincel es una herramienta de pintura"
+  },
+  {
+    "question": "En un triángulo rectángulo, si un cateto mide 3 cm y la hipotenusa mide 5 cm, ¿cuánto mide el otro cateto?",
+    "options": ["A. 4 cm", "B. 6 cm", "C. 2 cm", "D. 8 cm"],
+    "answer": "A",
+    "explanation": "Por el teorema de Pitágoras: 3² + x² = 5², entonces 9 + x² = 25, x² = 16, x = 4"
+  },
+  {
+    "question": "¿Cuál es el antónimo de 'efímero'?",
+    "options": ["A. Temporal", "B. Breve", "C. Duradero", "D. Fugaz"],
+    "answer": "C",
+    "explanation": "Efímero significa que dura poco tiempo, por lo tanto su antónimo es duradero"
+  },
+  {
+    "question": "Si el 20% de un número es 40, ¿cuál es el 75% de ese mismo número?",
+    "options": ["A. 120", "B. 150", "C. 160", "D. 180"],
+    "answer": "B",
+    "explanation": "Si 20% = 40, entonces el número es 200. El 75% de 200 = 150"
+  }
+]
