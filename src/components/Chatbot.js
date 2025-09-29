@@ -36,7 +36,6 @@ const Chatbot = ({ user }) => {
         `¡Hola ${user?.email || 'Usuario'}! 👋 Soy tu asistente conversacional.\n\n` +
         `Puedo ayudarte con:\n` +
         `• 📋 Consultar respuestas de la base de datos\n` +
-        `• 🎯 Generar respuestas específicas con parámetros personalizados\n` +
         `• 🔢 Generar cantidad exacta de respuestas (ej: "20 respuestas", "35 respuestas")\n` +
         `• ❓ Responder dudas sobre el sistema\n\n` +
         `¿En qué puedo ayudarte hoy?`
@@ -88,8 +87,7 @@ const Chatbot = ({ user }) => {
       addBotMessage(
         `No hay preguntas disponibles en la base de datos. 😔\n\n` +
         `Puedes:\n` +
-        `• Subir un archivo JSON con preguntas\n` +
-        `• Generar preguntas con IA`
+        `• Subir un archivo JSON con preguntas`
       );
       return;
     }
@@ -121,7 +119,6 @@ const Chatbot = ({ user }) => {
     suggestionMessage += `• Escribe un número (ej: "20", "35") para generar esa cantidad exacta de respuestas\n`;
     suggestionMessage += `• "Más respuestas" para ver otras sugerencias\n`;
     suggestionMessage += `• "Todas las respuestas" para ver la base completa\n`;
-    suggestionMessage += `• Especifica un tema si necesitas respuestas específicas\n`;
 
     addBotMessage(suggestionMessage);
   };
@@ -159,9 +156,8 @@ const Chatbot = ({ user }) => {
         `Perfecto, puedo ayudarte con las respuestas de la base de datos. 📋\n\n` +
         `Por favor, especifica:\n` +
         `• **Cantidad**: ¿Cuántas respuestas necesitas? (ej: "5", "20", "todas")\n` +
-        `• **Categoría** (opcional): ¿Algún tema específico?\n` +
         `• **Dificultad** (opcional): fácil, medio, difícil\n\n` +
-        `Ejemplo: "Necesito 10 respuestas de matemáticas de dificultad media"`
+        `Ejemplo: "Necesito 10 respuestas de dificultad media"`
       );
       return;
     }
@@ -301,15 +297,6 @@ const Chatbot = ({ user }) => {
       params.quantity = 'all';
     }
 
-    // Extraer categoría (palabras clave comunes)
-    const categories = ['matemáticas', 'ciencias', 'historia', 'geografía', 'literatura', 'física', 'química', 'biología'];
-    for (const category of categories) {
-      if (lowerInput.includes(category)) {
-        params.category = category;
-        break;
-      }
-    }
-
     // Extraer dificultad
     if (lowerInput.includes('fácil') || lowerInput.includes('facil')) {
       params.difficulty = 'fácil';
@@ -334,14 +321,6 @@ const Chatbot = ({ user }) => {
 
       let preguntas = docSnap.data().preguntas || [];
       
-      // Filtrar por categoría si se especificó
-      if (params.category) {
-        preguntas = preguntas.filter(p => 
-          p.categoria?.toLowerCase().includes(params.category) ||
-          p.pregunta?.toLowerCase().includes(params.category)
-        );
-      }
-
       // Filtrar por dificultad si se especificó
       if (params.difficulty) {
         preguntas = preguntas.filter(p => 
@@ -359,7 +338,6 @@ const Chatbot = ({ user }) => {
           `❌ No se encontraron preguntas con los criterios especificados.\n\n` +
           `Criterios aplicados:\n` +
           `${params.quantity !== 'all' ? `• Cantidad: ${params.quantity}\n` : ''}` +
-          `${params.category ? `• Categoría: ${params.category}\n` : ''}` +
           `${params.difficulty ? `• Dificultad: ${params.difficulty}\n` : ''}`
         );
         return;
@@ -404,7 +382,8 @@ const Chatbot = ({ user }) => {
       `• Con texto: "20 respuestas", "35 respuestas"\n\n` +
       `📋 **Consultar respuestas:**\n` +
       `• "Mostrar respuestas"\n` +
-      `• "Todas las respuestas"\n\n` +
+      `• "Más respuestas" - Ver otras sugerencias\n` +
+      `• "Todas las respuestas" - Ver base completa\n\n` +
       `❓ **Ayuda:**\n` +
       `• "Ayuda" - Mostrar este menú\n` +
       `• "¿Qué puedes hacer?" - Ver capacidades`

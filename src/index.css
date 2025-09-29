@@ -240,8 +240,9 @@
 /* Área de contenido */
 .content-area {
   flex: 1;
-  padding: 30px;
+  padding: 10px;
   overflow-y: auto;
+  height: calc(100vh - 20px);
 }
 
 /* Secciones de herramientas */
@@ -1041,11 +1042,11 @@ li ul li:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 700px;
-  max-width: 1200px;
+  height: calc(100vh - 40px);
+  min-height: calc(100vh - 40px);
+  max-width: none;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   animation: fadeIn 0.6s ease-out;
 }
 
